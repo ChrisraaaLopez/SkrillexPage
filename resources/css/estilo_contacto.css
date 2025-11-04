@@ -1,0 +1,88 @@
+/* ======== ESTILOS DE LA PÁGINA DE CONTACTO ======== */
+
+.contenedor-contacto {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.subtitulo-contacto {
+    font-size: 1.2rem;
+    color: var(--color-grey);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-formulario label {
+    font-family: var(--font-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    margin-bottom: 0.5rem;
+}
+
+
+/* Estilo base para formularios */
+
+.campo-formulario input[type="text"],
+.campo-formulario input[type="email"],
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-grey);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    /* Hereda la fuente */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+
+/* Estilo para el select */
+
+.campo-formulario select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+    padding-right: 3rem;
+}
+
+.campo-formulario input[type="text"]:focus,
+.campo-formulario input[type="email"]:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+
+/* Botón para enviar formulario */
+
+.formulario-contacto .boton-primario {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    cursor: pointer;
+}

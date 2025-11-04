@@ -1,0 +1,502 @@
+/* ======== ESTILOS GENERALES E INDEX ======== */
+
+
+/* pALETA DE COLORES*/
+
+:root {
+    --font-main: 'Orbitron', sans-serif;
+    --color-bg: #111111;
+    --color-text: #FFFFFF;
+    --color-accent: #FF0000;
+    --color-grey: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+
+/* Botones */
+
+.boton {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.boton-primario {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border-color: var(--color-accent);
+}
+
+.boton-primario:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-text);
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+
+/* Menu Header */
+
+.barra-navegacion {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-grey);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.barra-navegacion .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagen-logo {
+    height: 30px;
+    width: auto;
+}
+
+.texto-logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-accent);
+}
+
+.enlaces-nav ul {
+    display: flex;
+}
+
+.enlaces-nav li {
+    margin-left: 2rem;
+}
+
+.enlaces-nav a {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.enlaces-nav a:hover,
+.enlaces-nav a.activo {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.boton-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.boton-menu .barra {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+/* Seccion Principal */
+
+.portada {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.portada-superpuesta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+}
+
+.portada-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.portada-contenido h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.portada-contenido p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-grey);
+}
+
+
+/* Efecto para el texto Hero */
+
+.efecto-glitch {
+    position: relative;
+    color: var(--color-text);
+}
+
+.efecto-glitch::before,
+.efecto-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    overflow: hidden;
+}
+
+.efecto-glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--color-accent);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.efecto-glitch::after {
+    left: -2px;
+    text-shadow: 1px 0 var(--color-text);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(20px, 9999px, 90px, 0);
+    }
+    100% {
+        clip: rect(40px, 9999px, 110px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(80px, 9999px, 130px, 0);
+    }
+    100% {
+        clip: rect(10px, 9999px, 70px, 0);
+    }
+}
+
+
+/* Ultimo Lanzamineto */
+
+.ultimo-lanzamiento {
+    text-align: center;
+}
+
+.cuadricula-lanzamiento {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.info-lanzamiento h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.info-lanzamiento p {
+    color: var(--color-grey);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.enlaces-plataformas a {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Tour y Tickets */
+
+.fechas-tour {
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.lista-tour {
+    margin-top: 2rem;
+}
+
+.lista-tour li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--color-grey);
+    transition: background-color 0.3s ease;
+}
+
+.lista-tour li:hover {
+    background-color: rgba(136, 136, 136, 0.1);
+}
+
+.lista-tour .fecha {
+    font-weight: 700;
+    color: var(--color-accent);
+    flex-basis: 15%;
+}
+
+.lista-tour .lugar {
+    font-weight: 700;
+    flex-basis: 40%;
+}
+
+.lista-tour .ubicacion {
+    color: var(--color-grey);
+    flex-basis: 25%;
+}
+
+.lista-tour .boton-boleto {
+    flex-basis: 20%;
+    text-align: right;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.lista-tour .boton-boleto:hover {
+    text-decoration: underline;
+}
+
+.lista-tour .agotado {
+    color: var(--color-grey);
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--color-bg);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-top: 1px solid var(--color-grey);
+}
+
+.enlaces-sociales a {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.enlaces-sociales a:hover {
+    color: var(--color-accent);
+}
+
+footer p {
+    margin-top: 1.5rem;
+    color: var(--color-grey);
+    font-size: 0.9rem;
+}
+
+footer .creditos {
+    font-size: 0.8rem;
+    color: var(--color-grey);
+}
+
+
+/* MEDIA QUERYS */
+
+
+/* TABLET (Menor a 992px) */
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .portada-contenido h1 {
+        font-size: 4rem;
+    }
+    .cuadricula-lanzamiento {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .info-lanzamiento {
+        text-align: center;
+    }
+    .info-lanzamiento p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .imagen-logo {
+        height: 25px;
+    }
+    .texto-logo {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* MÓVIL (Menor a 768px) */
+
+@media (max-width: 768px) {
+    .boton-menu {
+        display: block;
+        z-index: 1002;
+    }
+    .enlaces-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .enlaces-nav.activo {
+        transform: translateX(0);
+    }
+    .enlaces-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .enlaces-nav li {
+        margin: 2rem 0;
+    }
+    .enlaces-nav a {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .portada-contenido h1 {
+        font-size: 3rem;
+    }
+    .portada-contenido p {
+        font-size: 1.2rem;
+    }
+    .lista-tour li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .lista-tour .fecha,
+    .lista-tour .lugar,
+    .lista-tour .ubicacion {
+        flex-basis: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .lista-tour .boton-boleto {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background-color: var(--color-accent);
+        color: var(--color-text);
+        width: 100%;
+    }
+    .lista-tour .agotado {
+        background-color: var(--color-grey);
+        color: var(--color-bg);
+    }
+    .imagen-logo {
+        height: 20px;
+    }
+    .texto-logo {
+        font-size: 1.3rem;
+    }
+}
