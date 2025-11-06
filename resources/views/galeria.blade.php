@@ -19,7 +19,7 @@
 
     <header class="barra-navegacion">
         <div class="contenedor">
-            <a href="index.html" class="contenedor-logo">
+            <a href="{{route('inicio')}}" class="contenedor-logo">
                 <img src="sources/logo.png" alt="Logo de Skrillex" class="imagen-logo">
                 <span class="texto-logo">SKRILLEX</span>
             </a>
