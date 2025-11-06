@@ -12,6 +12,6 @@ Como parte del desarrollo, se diseñó la interfaz en **Figma**, adaptando las v
 
 ---
 
-El proyecto completo se desarrolló en **HTML, CSS y JavaScript**, y fue publicado en GitHub para consulta abierta.  
+El proyecto completo se desarrolló en **HTML, CSS y JavaScript** en **Laravel**, y fue publicado desde Laravel Cloud para consulta abierta.  
 
 🌐 [Ver página en línea](https://skrillex-page-main-aly6zo.laravel.cloud/)
